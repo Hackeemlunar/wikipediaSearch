@@ -1,0 +1,1 @@
+A Wikipedia scraper that allows users to enter a word or phrase in a search bar and retrieves the top 10 related links. When a user inputs a search term, the scraper searches for that term on Wikipedia and returns the top ten results along with their associated links, if available.
