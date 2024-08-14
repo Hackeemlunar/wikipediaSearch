@@ -26,7 +26,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'me.aceking.wikipediasearch'
-    mainClass = 'me.aceking.wikipediasearch.HelloApplication'
+    mainClass = 'me.aceking.wikipediasearch.WikiSearchApplication'
 }
 
 javafx {
@@ -35,12 +35,22 @@ javafx {
 }
 
 dependencies {
-    implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
+    implementation 'org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0'
+    implementation 'org.openjfx:javafx-controls:17.0.1'
+    implementation 'org.controlsfx:controlsfx:11.2.1'
+    implementation ('com.dlsc.formsfx:formsfx-core:11.6.0') {
+        exclude(group: 'org.openjfx')
+    }
+    implementation('net.synedra:validatorfx:0.5.0') {
+        exclude(group: 'org.openjfx')
+    }
+    implementation('org.kordamp.ikonli:ikonli-javafx:12.3.1')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation("org.jsoup:jsoup:1.18.1")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client:3.4.1")
+    implementation( "com.zaxxer:HikariCP:5.1.0")
 }
 
 test {
